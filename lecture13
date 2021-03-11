@@ -1,0 +1,27 @@
+var age = 25;
+
+if (age < 20) {
+  console.log("20세 미만입니다.");
+}
+else {
+  console.log('20세 이상입니다.');
+}
+
+
+var year = prompt("연도를 입력해주세요");
+
+function isLeapYear(year) {
+  if (year % 4 == 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+if (isLeapYear(year) == 1) {
+  console.log("윤년");
+}
+else {
+  console.log("윤년 아님")
+}
