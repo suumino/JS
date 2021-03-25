@@ -1,16 +1,44 @@
-<html>
+<!-- <html>
     <head>
         <meta charset = "utf-8">
+        <style>
+            .character {color: black;}
+            .word {color: gray;}
+        </style>
         <script>
-            var req = new XMLHttpRequest( );
-            req.onreadystatechange = function a( ) {
-                console.log(this.readyState, this.status);
-            }
-            req.open("GET", "./data.txt");
-            req.send( );
+var req = new XMLHttpRequest( );
+req.onreadystatechange = function a( ) {
+    console.log(this.readyState, this.status);
+    if (this.readyState == 4) {
+        console.log(this.response);
+        var data = JSON.parse(this.response);                            // ➊
+        for (var i in data) {                                            // ➋
+            var t = document.getElementById("template").cloneNode(true); // ➌
+            t.removeAttribute("id");                                     // ➍
+            t.children[0].innerText = data[i].id;                        // ➎
+            t.children[1].innerText = data[i].msg;                       // ➏
+            document.body.appendChild(t);                                // ➐
+        }
+    }
+}
+req.open('GET', './json_data.txt')                                       // ➑
+req.send( );
         </script>
     </head>
     <body>
-        AJAX
+        <p id = "template">
+            <span class = "character">주인공</span> : <span class = "word">명대사</span>
+        </p>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+        <script src = 'script.js'></script>
+    </head>
+    <body>
+        anonymous function
     </body>
 </html>
